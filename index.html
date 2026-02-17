@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metabolic Idealism — A Thermodynamic Record Theory of Time</title>
+    <meta name="description" content="A research program grounding the direction of time in the thermodynamic maintenance of observer records. Three papers establishing proper-time uniqueness, the epistemic arrow, and the observer-constitution thesis.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --serif: 'Cormorant Garamond', 'Georgia', serif;
+            --sans: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --bg: #FAF8F5;
+            --bg-warm: #F3EFE9;
+            --text: #2C2825;
+            --text-secondary: #6B6560;
+            --accent: #8B3A3A;
+            --accent-light: #A85454;
+            --border: #D8D2CB;
+            --border-light: #E8E3DC;
+            --card-bg: #FFFFFF;
+            --cascade-line: #C4B9AD;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 100;
+            padding: 0.8rem 0;
+        }
+
+        nav .nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .site-name {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text);
+            letter-spacing: 0.01em;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav .nav-links a {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav .nav-links a.highlight {
+            color: var(--accent);
+        }
+
+        nav .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- Hero --- */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: 3.4rem;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            max-width: 700px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero-subtitle {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-description {
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 620px;
+            font-weight: 300;
+        }
+
+        /* --- Sections --- */
+        section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-rule {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.8rem;
+        }
+
+        p + p {
+            margin-top: 1.2rem;
+        }
+
+        section p {
+            max-width: 640px;
+            font-weight: 300;
+        }
+
+        /* --- The Thesis (key statement) --- */
+        .thesis-block {
+            background: var(--bg-warm);
+            border-left: 3px solid var(--accent);
+            padding: 2rem 2.5rem;
+            margin: 3rem 0;
+            max-width: 700px;
+        }
+
+        .thesis-block p {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text);
+            font-weight: 400;
+            max-width: none;
+        }
+
+        /* --- Cascade Diagram --- */
+        .cascade {
+            margin: 3.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 660px;
+        }
+
+        .cascade-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.8rem;
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .cascade-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .cascade-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 40px;
+        }
+
+        .cascade-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            margin-top: 0.4rem;
+        }
+
+        .cascade-line {
+            width: 1px;
+            flex-grow: 1;
+            background: var(--cascade-line);
+            min-height: 2rem;
+        }
+
+        .cascade-step:last-child .cascade-line {
+            display: none;
+        }
+
+        .cascade-content h4 {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .cascade-content p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        .cascade-arrow {
+            display: flex;
+            justify-content: center;
+            padding: 0.2rem 0;
+            color: var(--cascade-line);
+            font-size: 1.2rem;
+            margin-left: 14px;
+        }
+
+        /* --- I / Me distinction --- */
+        .i-me-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            max-width: 660px;
+        }
+
+        .i-me-card {
+            padding: 1.8rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+        }
+
+        .i-me-card .label {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-style: italic;
+            margin-bottom: 0.4rem;
+        }
+
+        .i-me-card h4 {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+        }
+
+        .i-me-card p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: none;
+            font-weight: 300;
+        }
+
+        /* --- Papers --- */
+        .papers-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            padding: 2.2rem 2.5rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: start;
+            transition: border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            border-color: var(--border);
+        }
+
+        .paper-number {
+            font-family: var(--serif);
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--border);
+            line-height: 1;
+            min-width: 50px;
+        }
+
+        .paper-info h3 {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+        }
+
+        .paper-info .paper-type {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .paper-info p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: none;
+            font-weight: 300;
+        }
+
+        .paper-download {
+            align-self: center;
+        }
+
+        .paper-download a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent);
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .paper-download a:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .paper-download a svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* --- How the Papers Connect --- */
+        .dependency-note {
+            margin-top: 2.5rem;
+            padding: 1.5rem 2rem;
+            background: var(--bg-warm);
+            border: 1px solid var(--border-light);
+            max-width: 660px;
+        }
+
+        .dependency-note p {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            max-width: none;
+            font-weight: 300;
+        }
+
+        .dependency-note strong {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* --- Contact --- */
+        .contact-section {
+            padding-bottom: 6rem;
+        }
+
+        .contact-section p {
+            font-weight: 300;
+        }
+
+        .contact-section a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .contact-section a:hover {
+            border-color: var(--accent);
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            html { font-size: 16px; }
+            
+            .hero { padding: 8rem 1.5rem 3rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            
+            section { padding: 3rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .i-me-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .paper-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .paper-number {
+                font-size: 1.8rem;
+            }
+            
+            .paper-download {
+                align-self: start;
+            }
+
+            nav .nav-links {
+                gap: 1rem;
+            }
+
+            nav .nav-links a {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label,
+        .hero h1,
+        .hero-subtitle,
+        .hero-description {
+            animation: fadeUp 0.8s ease-out both;
+        }
+
+        .hero h1 { animation-delay: 0.1s; }
+        .hero-subtitle { animation-delay: 0.2s; }
+        .hero-description { animation-delay: 0.35s; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <span class="site-name">Metabolic Idealism</span>
+        <div class="nav-links">
+            <a href="walkthrough.html" class="highlight">Visual Introduction</a>
+            <a href="#program">The Program</a>
+            <a href="#papers">Papers</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+
+<header class="hero">
+    <div class="hero-label">A Research Program</div>
+    <h1>Metabolic Idealism</h1>
+    <div class="hero-subtitle">A Thermodynamic Record Theory of Time</div>
+    <p class="hero-description">
+        Time's direction is neither a cosmic given nor a subjective imposition, but the inclusion order of the records by which knowers constitute themselves as such. This program grounds the arrow of time in the thermodynamic work by which observers create, maintain, and expand reliable records along their proper time.
+    </p>
+</header>
+
+<div class="section-rule"></div>
+
+<!-- ==================== THE PROGRAM ==================== -->
+
+<section id="program">
+    <div class="section-label">The Program</div>
+    <h2>Why does time have a direction?</h2>
+    
+    <p>
+        We experience time as flowing in one direction — from a remembered past through an experienced present toward an anticipated future. But the fundamental laws of physics are time-symmetric. Nothing in quantum mechanics or general relativity mandates a direction. So where does the arrow come from?
+    </p>
+    <p>
+        The standard answer appeals to cosmology: the universe began in a low-entropy state (the Past Hypothesis), and the second law of thermodynamics does the rest. But this account leaves a gap. It tells us why entropy increases. It does not tell us why we <em>experience</em> that increase as a directed flow. The arrow of time, on the standard picture, is something we observe. We want to know why it is something we <em>are</em>.
+    </p>
+
+    <div class="thesis-block">
+        <p>
+            The central claim of metabolic idealism is that the direction of time is constituted by the thermodynamic records that observers maintain at metabolic cost. An observer's temporal experience is not a passive registration of cosmic entropy increase, but an active, dissipation-funded process of record creation and maintenance along the observer's own proper time.
+        </p>
+    </div>
+
+    <p>
+        This is a strong claim. It requires showing three things: that proper time is the uniquely correct parameter for an embodied observer; that records grow along that parameter; and that self-maintaining systems can sustain the conditions under which both results hold. Three papers develop these claims in sequence.
+    </p>
+
+    <h3 style="margin-top: 3rem;">The cascade</h3>
+
+    <div class="cascade">
+        <div class="cascade-step">
+            <div class="cascade-marker">
+                <div class="cascade-dot"></div>
+                <div class="cascade-line"></div>
+            </div>
+            <div class="cascade-content">
+                <h4>Cosmological boundary</h4>
+                <p>A low-entropy early universe (the Past Hypothesis) makes local nonequilibrium and structure formation generic.</p>
+            </div>
+        </div>
+        <div class="cascade-step">
+            <div class="cascade-marker">
+                <div class="cascade-dot"></div>
+                <div class="cascade-line"></div>
+            </div>
+            <div class="cascade-content">
+                <h4>Thermodynamic throughput</h4>
+                <p>Local nonequilibrium sustains free-energy gradients that fund the creation and maintenance of reliable records — physical encodings of past events that can be stably read out.</p>
+            </div>
+        </div>
+        <div class="cascade-step">
+            <div class="cascade-marker">
+                <div class="cascade-dot"></div>
+                <div class="cascade-line"></div>
+            </div>
+            <div class="cascade-content">
+                <h4>Epistemic arrow in proper time</h4>
+                <p>Under positive dissipation, the expected information content of the record algebra grows along the observer's proper time — the unique relational parameter selected by the observer's own clock. The direction of knowledge aligns with the direction of proper time.</p>
+            </div>
+        </div>
+        <div class="cascade-step">
+            <div class="cascade-marker">
+                <div class="cascade-dot"></div>
+                <div class="cascade-line"></div>
+            </div>
+            <div class="cascade-content">
+                <h4>Observer constitution</h4>
+                <p>Active inference — the ongoing thermodynamic self-maintenance of the observer — stabilizes the physical regime in which proper-time emergence and record growth hold. The observer is not a passive witness to time but a metabolic participant in its constitution.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 3rem;">The "I" and the "me"</h3>
+
+    <p>
+        A distinction from the philosophy of personal identity illuminates what is at stake. The <em>"I"</em> is the transient subject of immediate experience — the felt quality of being alive right now. The <em>"me"</em> is the temporally extended self-model: the remembered past, the anticipated future, the sense of being the same person who woke up this morning.
+    </p>
+
+    <div class="i-me-grid">
+        <div class="i-me-card">
+            <div class="label">"I"</div>
+            <h4>Immediate experience</h4>
+            <p>The transient subject — the felt quality of being alive in this moment. Structured by the observer's internal clock. Not addressed by this program; belongs to a different investigation.</p>
+        </div>
+        <div class="i-me-card">
+            <div class="label">"me"</div>
+            <h4>Persistent identity</h4>
+            <p>The temporally extended self-model, realized in reliable internal records. Maintained by dissipation. Grows along proper time. This is what the program formalizes.</p>
+        </div>
+    </div>
+
+    <p>
+        The translation of immediate experience into stored memories — funded by free energy derived ultimately from environmental gradients — is what constitutes the "me" as a persistent entity. An agent that experiences the immediate but cannot remember it is a momentary flicker. An agent that converts experience into reliable records, maintaining and expanding them at thermodynamic cost, is a person traveling through time. What Parfit called <em>psychological continuity and connectedness</em> — what matters in survival — is, on this account, the maintenance and growth of the record algebra.
+    </p>
+    <p>
+        Sleep, anesthesia, and other gaps in consciousness do not threaten identity on this view: the record algebra persists within design tolerances while updating is temporarily suspended. What matters is not continuous experience but the integrity of the records.
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== PAPERS ==================== -->
+
+<section id="papers">
+    <div class="section-label">The Papers</div>
+    <h2>Three papers, one argument</h2>
+    
+    <p>
+        The program is developed across three papers with a clear logical dependency: Paper 1 provides the formal spine, Paper 2 builds the philosophical argument, and Paper 3 connects both to biological self-maintenance. Each paper stands independently, but together they form a unified case.
+    </p>
+
+    <div class="papers-grid">
+        <div class="paper-card">
+            <div class="paper-number">1</div>
+            <div class="paper-info">
+                <span class="paper-type">Technical Foundation</span>
+                <h3>Relational Emergence of Proper Time from Observer-Internal Clocks in a Covariant Page–Wootters Framework</h3>
+                <p>Shows that any clock satisfying minimal observer viability conditions — Lorentz-scalar completeness, correct calibration, unitarity, regular gauge, and monotonicity — must track the observer's proper time. This is not assumed but derived from the structure of the mass-energy constraint. Includes a meeting POVM for inter-observer agreement and realistic noise models for current optical clock experiments.</p>
+            </div>
+            <div class="paper-download">
+                <a href="papers/paper1.pdf" download>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-number">2</div>
+            <div class="paper-info">
+                <span class="paper-type">Philosophical Argument</span>
+                <h3>Proper Time and the Epistemic Arrow: From Cosmological Boundary to Thermodynamic Throughput to Persistent Identity</h3>
+                <p>Defines records operationally, shows that dissipation funds their expected growth, and establishes the epistemic arrow — the directed inclusion order of the record algebra along proper time. Connects the cosmological Past Hypothesis to thermodynamic throughput to the direction of knowledge. Aligns the temporally extended self with Parfit's notion of what matters in survival.</p>
+            </div>
+            <div class="paper-download">
+                <a href="papers/paper2.pdf" download>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-number">3</div>
+            <div class="paper-info">
+                <span class="paper-type">Unification</span>
+                <h3>The Markov Blanket as Quantum Reference Frame: Active Inference, Proper Time, and the Constitution of Observers</h3>
+                <p>Identifies the Markov blanket of the Free Energy Principle with the quantum reference frame of the PW/RAQ construction. Shows that active inference maintains the observer viability conditions, provides a principled exclusion of Boltzmann brains, and proposes a strategy for extending the framework from static to dynamic spacetimes.</p>
+            </div>
+            <div class="paper-download">
+                <a href="papers/paper3.pdf" download>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dependency-note">
+        <p>
+            <strong>How the papers connect:</strong> Paper 1 shows proper-time uniqueness. Paper 2 takes this as a theorem-level input and builds the epistemic arrow on it. Paper 3 takes both as inputs and asks what happens when we connect them to the Free Energy Principle. Each paper is self-contained, but the full argument runs 1&nbsp;→&nbsp;2&nbsp;→&nbsp;3.
+        </p>
+    </div>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== STATUS ==================== -->
+
+<section>
+    <div class="section-label">Status</div>
+    <h2>Work in progress</h2>
+    <p>
+        These papers are pre-publication drafts, made available for evaluation and criticism by interested researchers. The author welcomes substantive feedback — particularly on the formal results, the philosophical arguments, and the viability of the structural identification in Paper 3. Formal journal submission is planned following this period of open review.
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== CONTACT ==================== -->
+
+<section id="contact" class="contact-section">
+    <div class="section-label">Contact</div>
+    <h2>Get in touch</h2>
+    <p>
+        Correspondence, criticism, and collaboration inquiries:<br>
+        <a href="mailto:metabolicidealist@gmail.com">metabolicidealist@gmail.com</a>
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Metabolic Idealism. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
