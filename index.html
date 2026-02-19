@@ -667,7 +667,7 @@
     <h2>Get in touch</h2>
     <p>
         Correspondence, criticism, and collaboration inquiries:<br>
-        <a href="/cdn-cgi/l/email-protection#573a32233635383b3e343e3332363b3e242317303a363e3b7934383a"><span class="__cf_email__" data-cfemail="701d150411121f1c1913191415111c19030430171d11191c5e131f1d">[email&#160;protected]</span></a>
+        <a href="mailto:metabolicidealist@gmail.com">metabolicidealist@gmail.com</a>
     </p>
 </section>
 
@@ -676,9 +676,19 @@
 </footer>
 
 <!-- Scroll reveal -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-            if 
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+</body>
+</html>
