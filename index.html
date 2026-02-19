@@ -18,19 +18,15 @@
             --bg-warm: #F3EFE9;
             --text: #2C2825;
             --text-secondary: #6B6560;
+            --text-light: #958E87;
             --accent: #8B3A3A;
             --accent-light: #A85454;
             --border: #D8D2CB;
             --border-light: #E8E3DC;
             --card-bg: #FFFFFF;
-            --cascade-line: #C4B9AD;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html {
             font-size: 18px;
@@ -74,6 +70,7 @@
             font-size: 1.1rem;
             color: var(--text);
             letter-spacing: 0.01em;
+            text-decoration: none;
         }
 
         nav .nav-links {
@@ -92,13 +89,7 @@
             transition: color 0.2s;
         }
 
-        nav .nav-links a.highlight {
-            color: var(--accent);
-        }
-
-        nav .nav-links a:hover {
-            color: var(--accent);
-        }
+        nav .nav-links a:hover { color: var(--accent); }
 
         /* --- Hero --- */
         .hero {
@@ -127,11 +118,6 @@
             max-width: 700px;
         }
 
-        .hero h1 em {
-            font-style: italic;
-            font-weight: 400;
-        }
-
         .hero-subtitle {
             font-family: var(--serif);
             font-size: 1.5rem;
@@ -139,14 +125,14 @@
             font-style: italic;
             color: var(--text-secondary);
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 640px;
         }
 
         .hero-description {
             font-size: 1.02rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            max-width: 620px;
+            max-width: 640px;
             font-weight: 300;
         }
 
@@ -165,19 +151,18 @@
             margin: 0 auto;
         }
 
-        .section-label {
-            font-family: var(--sans);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
+        .section-number {
+            font-family: var(--serif);
+            font-size: 0.88rem;
+            font-weight: 400;
             color: var(--accent);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.4rem;
+            display: block;
         }
 
         h2 {
             font-family: var(--serif);
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 400;
             line-height: 1.25;
             margin-bottom: 1.5rem;
@@ -185,151 +170,66 @@
 
         h3 {
             font-family: var(--serif);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             line-height: 1.3;
-            margin-bottom: 0.8rem;
-        }
-
-        p + p {
-            margin-top: 1.2rem;
+            margin-bottom: 0.6rem;
         }
 
         section p {
             max-width: 640px;
             font-weight: 300;
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
         }
 
-        /* --- The Thesis (key statement) --- */
-        .thesis-block {
+        p + p { margin-top: 1.2rem; }
+
+        section p strong {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        section p em { font-style: italic; }
+
+        /* --- Highlight block --- */
+        .highlight-block {
             background: var(--bg-warm);
             border-left: 3px solid var(--accent);
-            padding: 2rem 2.5rem;
-            margin: 3rem 0;
-            max-width: 700px;
+            padding: 1.8rem 2.2rem;
+            margin: 2rem 0;
+            max-width: 660px;
         }
 
-        .thesis-block p {
+        .highlight-block p {
             font-family: var(--serif);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.6;
             color: var(--text);
             font-weight: 400;
             max-width: none;
         }
 
-        /* --- Cascade Diagram --- */
-        .cascade {
-            margin: 3.5rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
+        /* --- Synthesis list --- */
+        .synthesis-item {
+            margin-top: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-light);
             max-width: 660px;
         }
 
-        .cascade-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.8rem;
-            position: relative;
-            padding-bottom: 2rem;
-        }
-
-        .cascade-step:last-child {
-            padding-bottom: 0;
-        }
-
-        .cascade-marker {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 40px;
-        }
-
-        .cascade-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent);
-            flex-shrink: 0;
-            margin-top: 0.4rem;
-        }
-
-        .cascade-line {
-            width: 1px;
-            flex-grow: 1;
-            background: var(--cascade-line);
-            min-height: 2rem;
-        }
-
-        .cascade-step:last-child .cascade-line {
-            display: none;
-        }
-
-        .cascade-content h4 {
+        .synthesis-item h3 {
             font-family: var(--serif);
             font-size: 1.15rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 0.3rem;
-        }
-
-        .cascade-content p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            font-weight: 300;
-        }
-
-        .cascade-arrow {
-            display: flex;
-            justify-content: center;
-            padding: 0.2rem 0;
-            color: var(--cascade-line);
-            font-size: 1.2rem;
-            margin-left: 14px;
-        }
-
-        /* --- I / Me distinction --- */
-        .i-me-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2.5rem 0;
-            max-width: 660px;
-        }
-
-        .i-me-card {
-            padding: 1.8rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-        }
-
-        .i-me-card .label {
-            font-family: var(--serif);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-            font-style: italic;
             margin-bottom: 0.4rem;
         }
 
-        .i-me-card h4 {
-            font-family: var(--sans);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 0.6rem;
-        }
-
-        .i-me-card p {
-            font-size: 0.88rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
+        .synthesis-item p {
+            font-size: 0.95rem;
             max-width: none;
-            font-weight: 300;
         }
 
         /* --- Papers --- */
@@ -351,9 +251,7 @@
             transition: border-color 0.2s;
         }
 
-        .paper-card:hover {
-            border-color: var(--border);
-        }
+        .paper-card:hover { border-color: var(--border); }
 
         .paper-number {
             font-family: var(--serif);
@@ -366,7 +264,7 @@
 
         .paper-info h3 {
             font-family: var(--serif);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             line-height: 1.35;
@@ -386,14 +284,12 @@
         .paper-info p {
             font-size: 0.88rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.65;
             max-width: none;
             font-weight: 300;
         }
 
-        .paper-download {
-            align-self: center;
-        }
+        .paper-download { align-self: center; }
 
         .paper-download a {
             display: inline-flex;
@@ -416,12 +312,8 @@
             color: #fff;
         }
 
-        .paper-download a svg {
-            width: 14px;
-            height: 14px;
-        }
+        .paper-download a svg { width: 14px; height: 14px; }
 
-        /* --- How the Papers Connect --- */
         .dependency-note {
             margin-top: 2.5rem;
             padding: 1.5rem 2rem;
@@ -444,24 +336,14 @@
         }
 
         /* --- Contact --- */
-        .contact-section {
-            padding-bottom: 6rem;
-        }
-
-        .contact-section p {
-            font-weight: 300;
-        }
-
-        .contact-section a {
+        .contact-section p a {
             color: var(--accent);
             text-decoration: none;
             border-bottom: 1px solid var(--border);
             transition: border-color 0.2s;
         }
 
-        .contact-section a:hover {
-            border-color: var(--accent);
-        }
+        .contact-section p a:hover { border-color: var(--accent); }
 
         /* --- Footer --- */
         footer {
@@ -479,52 +361,37 @@
         /* --- Responsive --- */
         @media (max-width: 768px) {
             html { font-size: 16px; }
-            
             .hero { padding: 8rem 1.5rem 3rem; }
             .hero h1 { font-size: 2.4rem; }
             .hero-subtitle { font-size: 1.2rem; }
-            
             section { padding: 3rem 1.5rem; }
-            h2 { font-size: 1.8rem; }
-            
-            .i-me-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
+            h2 { font-size: 1.7rem; }
             .paper-card {
                 grid-template-columns: 1fr;
                 gap: 1rem;
                 padding: 1.5rem;
             }
-            
-            .paper-number {
-                font-size: 1.8rem;
-            }
-            
-            .paper-download {
-                align-self: start;
-            }
-
-            nav .nav-links {
-                gap: 1rem;
-            }
-
-            nav .nav-links a {
-                font-size: 0.7rem;
-            }
+            .paper-number { font-size: 1.8rem; }
+            .paper-download { align-self: start; }
+            nav .nav-links { gap: 1rem; }
+            nav .nav-links a { font-size: 0.7rem; }
         }
 
         /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-label,
@@ -543,10 +410,9 @@
 
 <nav>
     <div class="nav-inner">
-        <span class="site-name">Metabolic Idealism</span>
+        <a href="#" class="site-name">Metabolic Idealism</a>
         <div class="nav-links">
-            <a href="walkthrough.html" class="highlight">Visual Introduction</a>
-            <a href="#program">The Program</a>
+            <a href="#argument">The Argument</a>
             <a href="#papers">Papers</a>
             <a href="#contact">Contact</a>
         </div>
@@ -560,105 +426,159 @@
     <h1>Metabolic Idealism</h1>
     <div class="hero-subtitle">A Thermodynamic Record Theory of Time</div>
     <p class="hero-description">
-        Time's direction is neither a cosmic given nor a subjective imposition, but the inclusion order of the records by which knowers constitute themselves as such. This program grounds the arrow of time in the thermodynamic work by which observers create, maintain, and expand reliable records along their proper time.
+        How the physics of quantum constraints, thermodynamics, and active inference conspire to create the experience of time.
     </p>
 </header>
 
 <div class="section-rule"></div>
 
-<!-- ==================== THE PROGRAM ==================== -->
+<!-- ==================== THREE PAPERS, ONE ARGUMENT ==================== -->
 
-<section id="program">
-    <div class="section-label">The Program</div>
-    <h2>Why does time have a direction?</h2>
-    
+<section id="argument">
+    <span class="section-number">Overview</span>
+    <h2>Three papers, one argument</h2>
     <p>
-        We experience time as flowing in one direction — from a remembered past through an experienced present toward an anticipated future. But the fundamental laws of physics are time-symmetric. Nothing in quantum mechanics or general relativity mandates a direction. So where does the arrow come from?
+        This program develops a unified account of temporal experience across three papers. Paper&nbsp;1 shows that an observer's internal clock must track proper time. Paper&nbsp;2 shows that records grow along that proper time, grounding the arrow. Paper&nbsp;3 connects both to biological self-maintenance via the Free Energy Principle. Each stands independently; together they form a single cascade from quantum constraints to the constitution of observers.
     </p>
-    <p>
-        The standard answer appeals to cosmology: the universe began in a low-entropy state (the Past Hypothesis), and the second law of thermodynamics does the rest. But this account leaves a gap. It tells us why entropy increases. It does not tell us why we <em>experience</em> that increase as a directed flow. The arrow of time, on the standard picture, is something we observe. We want to know why it is something we <em>are</em>.
-    </p>
+</section>
 
-    <div class="thesis-block">
+<div class="section-rule"></div>
+
+<!-- ==================== 1. THE CENTRAL IDEA ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;1</span>
+    <h2>The Central Idea: An Enabled, Not Dictated, Arrow of Time</h2>
+    <p>
+        We often think of the passage of time as a universal river carrying us forward, dictated by the relentless, objective increase of cosmic entropy (the Second Law of Thermodynamics). This research program proposes a fundamental shift in perspective:
+    </p>
+    <div class="highlight-block">
         <p>
-            The central claim of metabolic idealism is that the direction of time is constituted by the thermodynamic records that observers maintain at metabolic cost. An observer's temporal experience is not a passive registration of cosmic entropy increase, but an active, dissipation-funded process of record creation and maintenance along the observer's own proper time.
+            The arrow of time is an observer-constituted phenomenon enabled by entropic conditions, rather than passively dictated by them.
+        </p>
+    </div>
+    <p>
+        Under this model, an observer's temporal experience is not a passive registration of the universe winding down. Instead, the direction of time is constituted by the thermodynamic records that observers actively maintain at a continuous metabolic cost. Time's arrow is an active, dissipation-funded process of record creation along the observer's own proper time.
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== 2. THE TIMELESS SUBSTRATE ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;2</span>
+    <h2>The Timeless Substrate</h2>
+    <p>
+        Modern physics presents a paradox: at its most fundamental level, the universe may not contain "time" at all. In canonical quantum gravity, the quantum state of the universe satisfies a constraint equation (like the Wheeler-DeWitt equation) where the total energy is zero and nothing "evolves." The universe simply <em>is</em>.
+    </p>
+    <p>
+        We can borrow a concept from Immanuel Kant to understand this. Kant divided reality into the <strong>noumena</strong> (the reality of things-in-themselves, independent of our perception) and the <strong>phenomena</strong> (the structured world as we experience it). In this framework, the vast, static, unconditioned Hilbert space of the universe is the quantum noumena. Our experience of a flowing, localized, and temporal reality &mdash; the phenomena &mdash; is an active structural translation made by the observer.
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== 3. TIME FROM CORRELATION ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;3</span>
+    <h2>Time from Correlation: The Central Move</h2>
+    <p>
+        If time isn't a fundamental background variable, how does the phenomenon of time emerge? We look to the Page-Wootters (PW) mechanism.
+    </p>
+    <p>
+        The PW mechanism shows that if you divide a static universe into two parts &mdash; a "clock" and the "rest of the universe" &mdash; these parts can be entangled. "Evolution" is simply the conditional correlation between them: given the clock reads <em>X</em>, what is the state of the system?
+    </p>
+    <p>
+        <strong>The central move:</strong> But what constitutes the clock? In this model, the clock is not an external metronome. The PW clock is defined by the observer's own internal degrees of freedom, bounded within their specific Quantum Reference Frame (QRF) or Markov Blanket. You carry your own emergent clock simply by existing as a bounded, fluctuating physical system.
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== 4. THE ENGINE OF MEMORY ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;4</span>
+    <h2>The Engine of Memory: Thermodynamics and Information</h2>
+    <p>
+        Having a mathematical parameter that looks like time isn't enough; an observer must feel a "flow" from past to future.
+    </p>
+    <p>
+        Forming a memory &mdash; a "record" &mdash; is not free. According to Landauer's Principle, writing information into a physical substrate requires expelling entropy (heat) into the environment. We can only form memories because we live in a universe with a gradient of free energy that we can tap into. <strong>Every memory you hold, every record of the past you maintain, is paid for in thermodynamic currency.</strong>
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== 5. CONSTRUCTING THE PAST ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;5</span>
+    <h2>Constructing the Past: Retrodiction and the Past Hypothesis</h2>
+    <p>
+        Strictly speaking, from the perspective of the observer, the past does not exist. Only present records exist &mdash; and the past is what those records are <em>about</em>.
+    </p>
+    <p>
+        From the current physical state of your brain or environment, you infer the past. But in a vast, timeless Hilbert space, there are infinitely many "micro-histories" that could have fluctuated into your current state purely by accident (the Boltzmann Brain paradox).
+    </p>
+    <p>
+        To ensure our records refer to a coherent history rather than a random fluctuation, our physical models invoke the <strong>Past Hypothesis</strong> (the assumption of a low-entropy early universe). Importantly, in this framework, we do not need to assume the Past Hypothesis is a fundamental, objective law of the cosmos. Rather, it is a <strong>retrodictive necessity</strong>. Because we currently exist as entities holding reliable, metabolically funded records, the Past Hypothesis is the necessary boundary condition selected by retrodiction to make those records logically and physically consistent.
+    </p>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== 6. PARFIT, IDENTITY, AND RECORD ALGEBRAS ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;6</span>
+    <h2>Parfit, Identity, and Record Algebras</h2>
+    <p>
+        What, then, constitutes "you" over time? Rather than seeing yourself most fundamentally as a static physical substance moving through a pre-existing temporal dimension, consider the philosopher Derek Parfit's view of identity.
+    </p>
+    <p>
+        Parfit argued that personal identity is about "psychological continuity and connectedness" over time. This physics framework provides a material translation of Parfit's philosophy. You are, in one way of looking at it, a <strong>Record Algebra</strong> &mdash; a collection of reliable, accessible information dynamically stored in a physical substrate.
+    </p>
+    <div class="highlight-block">
+        <p>
+            The Epistemic Arrow: As long as you dissipate energy to maintain your internal structure, your Record Algebra grows. The physical maintenance of this algebra is the persistence of your identity.
+        </p>
+    </div>
+</section>
+
+<div class="section-rule"></div>
+
+<!-- ==================== 7. THE SYNTHESIS ==================== -->
+
+<section class="reveal">
+    <span class="section-number">&sect;7</span>
+    <h2>The Synthesis: A Full-Stack Theory of the Observer</h2>
+    <p>
+        How do these elements combine into a coherent physical and biological theory?
+    </p>
+
+    <div class="synthesis-item">
+        <h3>A. The Clock &mdash; Proper Time &amp; Admissibility</h3>
+        <p>
+            Not all internal degrees of freedom make good clocks. An observer's internal dynamics must satisfy "admissibility" conditions &mdash; minimal observer viability requirements (e.g., behaving as a Lorentz scalar, not stalling). When these conditions are met, the emergent time parameter perfectly aligns with the observer's proper time in relativity.
         </p>
     </div>
 
-    <p>
-        This is a strong claim. It requires showing three things: that proper time is the uniquely correct parameter for an embodied observer; that records grow along that parameter; and that self-maintaining systems can sustain the conditions under which both results hold. Three papers develop these claims in sequence.
-    </p>
-
-    <h3 style="margin-top: 3rem;">The cascade</h3>
-
-    <div class="cascade">
-        <div class="cascade-step">
-            <div class="cascade-marker">
-                <div class="cascade-dot"></div>
-                <div class="cascade-line"></div>
-            </div>
-            <div class="cascade-content">
-                <h4>Cosmological boundary</h4>
-                <p>A low-entropy early universe (the Past Hypothesis) makes local nonequilibrium and structure formation generic.</p>
-            </div>
-        </div>
-        <div class="cascade-step">
-            <div class="cascade-marker">
-                <div class="cascade-dot"></div>
-                <div class="cascade-line"></div>
-            </div>
-            <div class="cascade-content">
-                <h4>Thermodynamic throughput</h4>
-                <p>Local nonequilibrium sustains free-energy gradients that fund the creation and maintenance of reliable records — physical encodings of past events that can be stably read out.</p>
-            </div>
-        </div>
-        <div class="cascade-step">
-            <div class="cascade-marker">
-                <div class="cascade-dot"></div>
-                <div class="cascade-line"></div>
-            </div>
-            <div class="cascade-content">
-                <h4>Epistemic arrow in proper time</h4>
-                <p>Under positive dissipation, the expected information content of the record algebra grows along the observer's proper time — the unique relational parameter selected by the observer's own clock. The direction of knowledge aligns with the direction of proper time.</p>
-            </div>
-        </div>
-        <div class="cascade-step">
-            <div class="cascade-marker">
-                <div class="cascade-dot"></div>
-                <div class="cascade-line"></div>
-            </div>
-            <div class="cascade-content">
-                <h4>Observer constitution</h4>
-                <p>Active inference — the ongoing thermodynamic self-maintenance of the observer — stabilizes the physical regime in which proper-time emergence and record growth hold. The observer is not a passive witness to time but a metabolic participant in its constitution.</p>
-            </div>
-        </div>
+    <div class="synthesis-item">
+        <h3>B. The Self &mdash; Record Algebras</h3>
+        <p>
+            The epistemic arrow of time is simply the inclusion order of a physically realized Record Algebra, funded by thermodynamic throughput. Your past grows as your records accumulate; your identity persists as long as you maintain them.
+        </p>
     </div>
 
-    <h3 style="margin-top: 3rem;">The "I" and the "me"</h3>
-
-    <p>
-        A distinction from the philosophy of personal identity illuminates what is at stake. The <em>"I"</em> is the transient subject of immediate experience — the felt quality of being alive right now. The <em>"me"</em> is the temporally extended self-model: the remembered past, the anticipated future, the sense of being the same person who woke up this morning.
-    </p>
-
-    <div class="i-me-grid">
-        <div class="i-me-card">
-            <div class="label">"I"</div>
-            <h4>Immediate experience</h4>
-            <p>The transient subject — the felt quality of being alive in this moment. Structured by the observer's internal clock. Not addressed by this program; belongs to a different investigation.</p>
-        </div>
-        <div class="i-me-card">
-            <div class="label">"me"</div>
-            <h4>Persistent identity</h4>
-            <p>The temporally extended self-model, realized in reliable internal records. Maintained by dissipation. Grows along proper time. This is what the program formalizes.</p>
-        </div>
+    <div class="synthesis-item">
+        <h3>C. The Boundary &mdash; Markov Blanket = QRF</h3>
+        <p>
+            How do you maintain these conditions? You maintain a boundary. In theoretical biology, this is the Markov Blanket; in quantum mechanics, it is a Quantum Reference Frame. By performing Active Inference (working to maintain your boundary and predict the environment), you dynamically secure the exact physical conditions required for proper time to emerge and your Record Algebra to persist.
+        </p>
     </div>
-
-    <p>
-        The translation of immediate experience into stored memories — funded by free energy derived ultimately from environmental gradients — is what constitutes the "me" as a persistent entity. An agent that experiences the immediate but cannot remember it is a momentary flicker. An agent that converts experience into reliable records, maintaining and expanding them at thermodynamic cost, is a person traveling through time. What Parfit called <em>psychological continuity and connectedness</em> — what matters in survival — is, on this account, the maintenance and growth of the record algebra.
-    </p>
-    <p>
-        Sleep, anesthesia, and other gaps in consciousness do not threaten identity on this view: the record algebra persists within design tolerances while updating is temporarily suspended. What matters is not continuous experience but the integrity of the records.
-    </p>
 </section>
 
 <div class="section-rule"></div>
@@ -666,11 +586,10 @@
 <!-- ==================== PAPERS ==================== -->
 
 <section id="papers">
-    <div class="section-label">The Papers</div>
-    <h2>Three papers, one argument</h2>
-    
+    <span class="section-number">Papers</span>
+    <h2>The formal argument</h2>
     <p>
-        The program is developed across three papers with a clear logical dependency: Paper 1 provides the formal spine, Paper 2 builds the philosophical argument, and Paper 3 connects both to biological self-maintenance. Each paper stands independently, but together they form a unified case.
+        The program is developed across three papers with a clear logical dependency: Paper&nbsp;1 provides the formal spine, Paper&nbsp;2 builds the philosophical argument, and Paper&nbsp;3 connects both to biological self-maintenance.
     </p>
 
     <div class="papers-grid">
@@ -678,8 +597,8 @@
             <div class="paper-number">1</div>
             <div class="paper-info">
                 <span class="paper-type">Technical Foundation</span>
-                <h3>Relational Emergence of Proper Time from Observer-Internal Clocks in a Covariant Page–Wootters Framework</h3>
-                <p>Shows that any clock satisfying minimal observer viability conditions — Lorentz-scalar completeness, correct calibration, unitarity, regular gauge, and monotonicity — must track the observer's proper time. This is not assumed but derived from the structure of the mass-energy constraint. Includes a meeting POVM for inter-observer agreement and realistic noise models for current optical clock experiments.</p>
+                <h3>Relational Emergence of Proper Time from Observer-Internal Clocks in a Covariant Page&ndash;Wootters Framework</h3>
+                <p>Shows that any clock satisfying minimal observer viability conditions &mdash; Lorentz-scalar completeness, correct calibration, unitarity, regular gauge, and monotonicity &mdash; must track the observer's proper time. Includes a meeting POVM for inter-observer agreement and realistic noise models for current optical clock experiments.</p>
             </div>
             <div class="paper-download">
                 <a href="papers/paper1.pdf" download>
@@ -694,7 +613,7 @@
             <div class="paper-info">
                 <span class="paper-type">Philosophical Argument</span>
                 <h3>Proper Time and the Epistemic Arrow: From Cosmological Boundary to Thermodynamic Throughput to Persistent Identity</h3>
-                <p>Defines records operationally, shows that dissipation funds their expected growth, and establishes the epistemic arrow — the directed inclusion order of the record algebra along proper time. Connects the cosmological Past Hypothesis to thermodynamic throughput to the direction of knowledge. Aligns the temporally extended self with Parfit's notion of what matters in survival.</p>
+                <p>Defines records operationally, shows that dissipation funds their expected growth, and establishes the epistemic arrow &mdash; the directed inclusion order of the record algebra along proper time. Connects the cosmological Past Hypothesis to thermodynamic throughput to the direction of knowledge.</p>
             </div>
             <div class="paper-download">
                 <a href="papers/paper2.pdf" download>
@@ -709,7 +628,7 @@
             <div class="paper-info">
                 <span class="paper-type">Unification</span>
                 <h3>The Markov Blanket as Quantum Reference Frame: Active Inference, Proper Time, and the Constitution of Observers</h3>
-                <p>Identifies the Markov blanket of the Free Energy Principle with the quantum reference frame of the PW/RAQ construction. Shows that active inference maintains the observer viability conditions, provides a principled exclusion of Boltzmann brains, and proposes a strategy for extending the framework from static to dynamic spacetimes.</p>
+                <p>Identifies the Markov blanket of the Free Energy Principle with the quantum reference frame of the PW/RAQ construction. Shows that active inference maintains the observer viability conditions, provides a principled exclusion of Boltzmann brains, and proposes a strategy for extending the framework to dynamic spacetimes.</p>
             </div>
             <div class="paper-download">
                 <a href="papers/paper3.pdf" download>
@@ -722,7 +641,7 @@
 
     <div class="dependency-note">
         <p>
-            <strong>How the papers connect:</strong> Paper 1 shows proper-time uniqueness. Paper 2 takes this as a theorem-level input and builds the epistemic arrow on it. Paper 3 takes both as inputs and asks what happens when we connect them to the Free Energy Principle. Each paper is self-contained, but the full argument runs 1&nbsp;→&nbsp;2&nbsp;→&nbsp;3.
+            <strong>How the papers connect:</strong> Paper&nbsp;1 shows proper-time uniqueness. Paper&nbsp;2 takes this as a theorem-level input and builds the epistemic arrow on it. Paper&nbsp;3 takes both as inputs and asks what happens when we connect them to the Free Energy Principle. Each paper is self-contained, but the full argument runs 1&nbsp;&rarr;&nbsp;2&nbsp;&rarr;&nbsp;3.
         </p>
     </div>
 </section>
@@ -731,11 +650,11 @@
 
 <!-- ==================== STATUS ==================== -->
 
-<section>
-    <div class="section-label">Status</div>
+<section class="reveal">
+    <span class="section-number">Status</span>
     <h2>Work in progress</h2>
     <p>
-        These papers are pre-publication drafts, made available for evaluation and criticism by interested researchers. The author welcomes substantive feedback — particularly on the formal results, the philosophical arguments, and the viability of the structural identification in Paper 3. Formal journal submission is planned following this period of open review.
+        These papers are pre-publication drafts, made available for evaluation and criticism by interested researchers. The author welcomes substantive feedback &mdash; particularly on the formal results, the philosophical arguments, and the viability of the structural identification in Paper&nbsp;3.
     </p>
 </section>
 
@@ -743,12 +662,12 @@
 
 <!-- ==================== CONTACT ==================== -->
 
-<section id="contact" class="contact-section">
-    <div class="section-label">Contact</div>
+<section id="contact" class="contact-section reveal" style="padding-bottom: 6rem;">
+    <span class="section-number">Contact</span>
     <h2>Get in touch</h2>
     <p>
         Correspondence, criticism, and collaboration inquiries:<br>
-        <a href="mailto:metabolicidealist@gmail.com">metabolicidealist@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#573a32233635383b3e343e3332363b3e242317303a363e3b7934383a"><span class="__cf_email__" data-cfemail="701d150411121f1c1913191415111c19030430171d11191c5e131f1d">[email&#160;protected]</span></a>
     </p>
 </section>
 
@@ -756,5 +675,10 @@
     <p>&copy; 2025 Metabolic Idealism. All rights reserved.</p>
 </footer>
 
-</body>
-</html>
+<!-- Scroll reveal -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if 
